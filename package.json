@@ -1,0 +1,6 @@
+{
+  "name": "daily-workout",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node tests.js", "start": "python -m http.server 8080" }
+}

@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tests</title>
+<style>body{font:15px system-ui;padding:16px}.p{color:#1b8a4b}.f{color:#c62828;font-weight:700}</style></head>
+<body><h1>Progression &amp; schedule tests</h1><pre id="out"></pre>
+<script type="module">
+  import { runTests } from './tests.js';
+  const r = runTests();
+  document.getElementById('out').innerHTML = r.map(t => `<div class="${t.ok ? 'p' : 'f'}">${t.ok ? 'PASS' : 'FAIL'}  ${t.name}${t.ok ? '' : ' — ' + t.extra}</div>`).join('') +
+    `<p>${r.filter(t => t.ok).length}/${r.length} passed</p>`;
+</script></body></html>
